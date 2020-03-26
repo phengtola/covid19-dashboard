@@ -13,27 +13,31 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @ToString
 @Entity
-@Audited
-public class WorldSumCovidData {
+@Table(name = "camb_sum_covid_data")
+public class CambSumCovidData {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(insertable=false, updatable=false, nullable = false)
     private Long id;
+
     private long totalCases;
-    private long newCases;
     private long totalDeaths;
-    private long newDeaths;
     private long totalRecovered;
-    private long activeCases;
-    private long seriousCritical;
-    @Column(name = "tot_cases_1m_pop")
-    private double totCases1mPop;
-    @Column(name = "tot_deaths_1m_pop")
-    private double totDeaths1mPop;
-    @Column(name = "updated_at", columnDefinition = "TIMESTAMP")
+
+    private long totalMale;
+    private long totalFemale;
+
+    private long totalUsa;
+    private long totalBelgium;
+    private long totalChina;
+    private long totalEngland;
+    private long totalMalaysia;
+    private long totalCambodia;
+
+    @Column(name = "updated_date", columnDefinition = "TIMESTAMP")
     @LastModifiedDate
-    private LocalDateTime updatedAt;
+    private LocalDateTime updatedDate;
 
 
 

@@ -1,7 +1,7 @@
-spring:
 
+spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/covid_data
+    url: jdbc:postgresql://localhost:5432/COVID_DATA_V2
     hikari:
       driver-class-name: org.postgresql.Driver
       username: postgres
@@ -31,4 +31,5 @@ spring:
   jackson:
     property-naming-strategy: com.fasterxml.jackson.databind.PropertyNamingStrategy.LowerCaseWithUnderscoresStrategy
 
-
+server:
+  port: 8082
