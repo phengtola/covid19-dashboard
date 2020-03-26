@@ -36,7 +36,9 @@ public class ScrappingServiceImpl implements ScrappingService {
             Elements tdsLast = trLast.getElementsByTag("td");
 
             WorldSumCovidData worldSumCovidData = new WorldSumCovidData();
-            worldSumCovidData.setId(1L);
+            if(worldSumCovidDataRepo.existsById(1L)){
+                worldSumCovidData.setId(1L);
+            }
             worldSumCovidData.setTotalCases(Long.parseLong(tdsLast.get(1).text().replace(",","")));
             worldSumCovidData.setNewCases(Long.parseLong(tdsLast.get(2).text().replace(",","")));
             worldSumCovidData.setTotalDeaths(Long.parseLong(tdsLast.get(3).text().replace(",","")));
