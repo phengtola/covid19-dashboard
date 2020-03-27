@@ -38,6 +38,7 @@
             dataType: tableau.dataTypeEnum.date
         }];
 
+
         var tableSchema = {
             id: "Covid-19 Cmabodia Data",
             alias: "Province",
