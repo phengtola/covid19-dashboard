@@ -114,8 +114,8 @@
                 dataType: tableau.dataTypeEnum.float
             }
         , {
-            id: "updated_at",
-            alias: "updated_at",
+            id: "updated_date",
+            alias: "updated_date",
             dataType: tableau.dataTypeEnum.date
         }];
 
