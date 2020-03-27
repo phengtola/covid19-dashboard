@@ -162,7 +162,7 @@
                         "total_france_recovered": feat.total_france_recovered,
                         "total_cambodia_recovered": feat.total_cambodia_recovered,
 
-                        "updated_date": feat.updated_date
+                         "updated_date": feat.updated_date
                 });
             console.log("tableData", tableData);
             table.appendRows(tableData);
