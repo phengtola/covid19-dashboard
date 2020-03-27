@@ -52,7 +52,68 @@
             id: "total_cambodia",
             alias: "total_cambodia",
             dataType: tableau.dataTypeEnum.float
-        }, {
+        }
+        , {
+            id: "total_indonesia",
+            alias: "total_indonesia",
+            dataType: tableau.dataTypeEnum.float
+        },
+            {
+                id: "total_canada",
+                alias: "total_canada",
+                dataType: tableau.dataTypeEnum.float
+            }
+            , {
+                id: "total_france",
+                alias: "total_france",
+                dataType: tableau.dataTypeEnum.float
+            }
+            , {
+                id: "total_usa_recovered",
+                alias: "total_usa_recovered",
+                dataType: tableau.dataTypeEnum.float
+            },
+            {
+                id: "total_belgium_recovered",
+                alias: "total_belgium_recovered",
+                dataType: tableau.dataTypeEnum.float
+            }
+            ,{
+                id: "total_china_recovered",
+                alias: "total_china_recovered",
+                dataType: tableau.dataTypeEnum.float
+            }
+            ,{
+                id: "total_england_recovered",
+                alias: "total_england_recovered",
+                dataType: tableau.dataTypeEnum.float
+            }
+            ,{
+                id: "total_malaysia_recovered",
+                alias: "total_malaysia_recovered",
+                dataType: tableau.dataTypeEnum.float
+            }
+            ,{
+                id: "total_indonesia_recovered",
+                alias: "total_indonesia_recovered",
+                dataType: tableau.dataTypeEnum.float
+            }
+            ,{
+                id: "total_canada_recovered",
+                alias: "total_canada_recovered",
+                dataType: tableau.dataTypeEnum.float
+            }
+            ,{
+                id: "total_france_recovered",
+                alias: "total_france_recovered",
+                dataType: tableau.dataTypeEnum.float
+            }
+            ,{
+                id: "total_cambodia_recovered",
+                alias: "total_cambodia_recovered",
+                dataType: tableau.dataTypeEnum.float
+            }
+        , {
             id: "updated_at",
             alias: "updated_at",
             dataType: tableau.dataTypeEnum.date
@@ -87,6 +148,20 @@
                         "total_england": feat.total_england,
                         "total_malaysia": feat.total_malaysia,
                         "total_cambodia": feat.total_cambodia,
+                        "total_indonesia": feat.total_indonesia,
+                        "total_canada": feat.total_canada,
+                        "total_france": feat.total_france,
+
+                        "total_usa_recovered": feat.total_usa_recovered,
+                        "total_belgium_recovered": feat.total_belgium_recovered,
+                        "total_china_recovered": feat.total_china_recovered,
+                        "total_england_recovered": feat.total_england_recovered,
+                        "total_malaysia_recovered": feat.total_malaysia_recovered,
+                        "total_indonesia_recovered": feat.total_indonesia_recovered,
+                        "total_canada_recovered": feat.total_canada_recovered,
+                        "total_france_recovered": feat.total_france_recovered,
+                        "total_cambodia_recovered": feat.total_cambodia_recovered,
+
                         "updated_date": feat.updated_date
                 });
             console.log("tableData", tableData);
@@ -100,7 +175,7 @@
     // Create event listeners for when the user submits the form
     $(document).ready(function() {
         $("#submitButton").click(function() {
-            tableau.connectionName = "Covid-19 World Data"; // This will be the data source name in Tableau
+            tableau.connectionName = "Covid-19 Cambodia Data"; // This will be the data source name in Tableau
             tableau.submit(); // This sends the connector object to Tableau
         });
     });

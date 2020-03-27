@@ -22,6 +22,8 @@ public class CambSumCovidData {
     private Long id;
 
     private long totalCases;
+    @Column(nullable = true)
+    private long totalActiveCases;
     private long totalDeaths;
     private long totalRecovered;
 
@@ -34,6 +36,32 @@ public class CambSumCovidData {
     private long totalEngland;
     private long totalMalaysia;
     private long totalCambodia;
+
+    @Column(nullable = true)
+    private long totalIndonesia;
+    @Column(nullable = true)
+    private long totalCanada;
+    @Column(nullable = true)
+    private long totalFrance;
+
+    @Column(nullable = true)
+    private long totalUsaRecovered;
+    @Column(nullable = true)
+    private long totalBelgiumRecovered;
+    @Column(nullable = true)
+    private long totalChinaRecovered;
+    @Column(nullable = true)
+    private long totalEnglandRecovered;
+    @Column(nullable = true)
+    private long totalMalaysiaRecovered;
+    @Column(nullable = true)
+    private long totalIndonesiaRecovered;
+    @Column(nullable = true)
+    private long totalCanadaRecovered;
+    @Column(nullable = true)
+    private long totalFranceRecovered;
+    @Column(nullable = true)
+    private long totalCambodiaRecovered;
 
     @Column(name = "updated_date", columnDefinition = "TIMESTAMP")
     @LastModifiedDate
