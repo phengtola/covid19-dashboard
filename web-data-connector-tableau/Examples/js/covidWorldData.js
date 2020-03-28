@@ -44,11 +44,11 @@
             id: "tot_deaths1m_pop",
             alias: "tot_deaths1m_pop",
             dataType: tableau.dataTypeEnum.float
-        }, {
+        }/*, {
             id: "updated_at",
             alias: "updated_at",
             dataType: tableau.dataTypeEnum.date
-        }];
+        }*/];
 
         var tableSchema = {
             id: "Covid-19 World Data",
@@ -76,8 +76,8 @@
                     "active_cases": feat.active_cases,
                     "serious_critical": feat.serious_critical,
                     "tot_cases1m_pop": feat.tot_cases1m_pop,
-                    "tot_deaths1m_pop": feat.tot_deaths1m_pop,
-                    "updated_at": feat.updated_at
+                    "tot_deaths1m_pop": feat.tot_deaths1m_pop
+                   // "updated_at": feat.updated_at
                 });
             console.log("tableData", tableData);
             table.appendRows(tableData);
