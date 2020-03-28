@@ -68,7 +68,7 @@ public class ScrappingServiceImpl implements ScrappingService {
                                 .replaceAll("\\s+","_")
                                 .replace(".","")
                                 .replace("-","_")
-                                .toLowerCase()
+                                .toLowerCase().trim()
                 );
                 worldCovidData.setCountryEn(tds.get(0).text());
                 try {
