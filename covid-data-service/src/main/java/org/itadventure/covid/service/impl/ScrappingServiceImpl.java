@@ -66,7 +66,9 @@ public class ScrappingServiceImpl implements ScrappingService {
                 worldCovidData.setCountryId(
                         tds.get(0).text()
                                 .replaceAll("\\s+","_")
-                                .replace(".","").toLowerCase()
+                                .replace(".","")
+                                .replace("-","_")
+                                .toLowerCase()
                 );
                 worldCovidData.setCountryEn(tds.get(0).text());
                 try {
