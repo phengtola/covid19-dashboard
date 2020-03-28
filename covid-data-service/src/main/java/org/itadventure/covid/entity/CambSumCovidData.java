@@ -1,11 +1,16 @@
 package org.itadventure.covid.entity;
 
 import lombok.*;
+import org.hibernate.annotations.ColumnDefault;
 import org.hibernate.envers.Audited;
 import org.springframework.data.annotation.LastModifiedDate;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
+
+/**
+ * Last Updated At 28/03/2020 By Tola
+ */
 
 @Setter
 @Getter
@@ -21,52 +26,77 @@ public class CambSumCovidData {
     @Column(insertable=false, updatable=false, nullable = false)
     private Long id;
 
+    /** TotalCases **/
+    @ColumnDefault("0")
     private long totalCases;
-    @Column(nullable = true)
+    @ColumnDefault("0")
+    private long totalCasesFemale;
+    @ColumnDefault("0")
+    private long totalCasesMale;
+    @ColumnDefault("0")
+    private long totalCasesUsa;
+    @ColumnDefault("0")
+    private long totalCasesBelgium;
+    @ColumnDefault("0")
+    private long totalCasesChina;
+    @ColumnDefault("0")
+    private long totalCasesEngland;
+    @ColumnDefault("0")
+    private long totalCasesMalaysia;
+    @ColumnDefault("0")
+    private long totalCasesCambodia;
+    @ColumnDefault("0")
+    private long totalCasesIndonesia;
+    @ColumnDefault("0")
+    private long totalCasesCanada;
+    @ColumnDefault("0")
+    private long totalCasesFrance;
+
+    /** TotalActiveCases **/
+    @ColumnDefault("0")
     private long totalActiveCases;
-    private long totalDeaths;
+    @ColumnDefault("0")
+    private long totalActiveCasesFemale;
+    @ColumnDefault("0")
+    private long totalActiveCasesMale;
+
+    /** totalRecovered **/
+    @ColumnDefault("0")
     private long totalRecovered;
+    @ColumnDefault("0")
+    private long totalRecoveredFemale;
+    @ColumnDefault("0")
+    private long totalRecoveredMale;
+    @ColumnDefault("0")
+    private long totalRecoveredUsa;
+    @ColumnDefault("0")
+    private long totalRecoveredBelgium;
+    @ColumnDefault("0")
+    private long totalRecoveredChina;
+    @ColumnDefault("0")
+    private long totalRecoveredEngland;
+    @ColumnDefault("0")
+    private long totalRecoveredMalaysia;
+    @ColumnDefault("0")
+    private long totalRecoveredIndonesia;
+    @ColumnDefault("0")
+    private long totalRecoveredCanada;
+    @ColumnDefault("0")
+    private long totalRecoveredFrance;
+    @ColumnDefault("0")
+    private long totalRecoveredCambodia;
 
-    private long totalMale;
-    private long totalFemale;
+    /** totalDeaths **/
+    @ColumnDefault("0")
+    private long totalDeaths;
+    @ColumnDefault("0")
+    private long totalDeathsFemale;
+    @ColumnDefault("0")
+    private long totalDeathsMale;
 
-    private long totalUsa;
-    private long totalBelgium;
-    private long totalChina;
-    private long totalEngland;
-    private long totalMalaysia;
-    private long totalCambodia;
 
-    @Column(nullable = true)
-    private long totalIndonesia;
-    @Column(nullable = true)
-    private long totalCanada;
-    @Column(nullable = true)
-    private long totalFrance;
-
-    @Column(nullable = true)
-    private long totalUsaRecovered;
-    @Column(nullable = true)
-    private long totalBelgiumRecovered;
-    @Column(nullable = true)
-    private long totalChinaRecovered;
-    @Column(nullable = true)
-    private long totalEnglandRecovered;
-    @Column(nullable = true)
-    private long totalMalaysiaRecovered;
-    @Column(nullable = true)
-    private long totalIndonesiaRecovered;
-    @Column(nullable = true)
-    private long totalCanadaRecovered;
-    @Column(nullable = true)
-    private long totalFranceRecovered;
-    @Column(nullable = true)
-    private long totalCambodiaRecovered;
-
-    @Column(name = "updated_date", columnDefinition = "TIMESTAMP")
+    @Column(name = "updated_date", columnDefinition = "TIMESTAMP DEFAULT NOW()")
     @LastModifiedDate
     private LocalDateTime updatedDate;
-
-
 
 }
