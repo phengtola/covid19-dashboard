@@ -7,7 +7,7 @@
         var cols = [{
             id: "id",
             alias: "id",
-            dataType: tableau.dataTypeEnum.float
+            dataType: tableau.dataTypeEnum.int
         }, {
             id: "country_id",
             alias: "country_id",
@@ -19,31 +19,31 @@
         }, {
             id: "total_cases",
             alias: "total_cases",
-            dataType: tableau.dataTypeEnum.float
+            dataType: tableau.dataTypeEnum.int
         }, {
             id: "new_cases",
             alias: "new_cases",
-            dataType: tableau.dataTypeEnum.float
+            dataType: tableau.dataTypeEnum.int
         }, {
             id: "total_deaths",
             alias: "total_deaths",
-            dataType: tableau.dataTypeEnum.float
+            dataType: tableau.dataTypeEnum.int
         }, {
             id: "new_deaths",
             alias: "new_deaths",
-            dataType: tableau.dataTypeEnum.float
+            dataType: tableau.dataTypeEnum.int
         }, {
             id: "total_recovered",
             alias: "total_recovered",
-            dataType: tableau.dataTypeEnum.float
+            dataType: tableau.dataTypeEnum.int
         }, {
             id: "active_cases",
             alias: "active_cases",
-            dataType: tableau.dataTypeEnum.float
+            dataType: tableau.dataTypeEnum.int
         }, {
             id: "serious_critical",
             alias: "serious_critical",
-            dataType: tableau.dataTypeEnum.float
+            dataType: tableau.dataTypeEnum.int
         }, {
             id: "tot_cases1m_pop",
             alias: "tot_cases1m_pop",
@@ -55,12 +55,12 @@
         }, {
             id: "updated_at",
             alias: "updated_at",
-            dataType: tableau.dataTypeEnum.date
+            dataType: tableau.dataTypeEnum.datetime
         }];
 
         var tableSchema = {
-            id: "Covid-19 World Data",
-            alias: "Country",
+            id: "covidWorldDataByCountry",
+            alias: "TOTAL COVID BY COUNTRY",
             columns: cols
         };
 
@@ -103,7 +103,7 @@
     // Create event listeners for when the user submits the form
     $(document).ready(function() {
         $("#submitButton").click(function() {
-            tableau.connectionName = "Covid-19 World Data | Country"; // This will be the data source name in Tableau
+            tableau.connectionName = "TOTAL COVID BY COUNTRY"; // This will be the data source name in Tableau
             tableau.submit(); // This sends the connector object to Tableau
         });
     });

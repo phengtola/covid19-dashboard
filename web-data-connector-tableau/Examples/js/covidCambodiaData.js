@@ -4,167 +4,168 @@
 
     // Define the schema
     myConnector.getSchema = function(schemaCallback) {
-        var cols = [{
+        var cols = [
+            {
             id: "id",
             alias: "id",
-            dataType: tableau.dataTypeEnum.float
+            dataType: tableau.dataTypeEnum.int
         },
             // total_cases
             {
             id: "total_cases",
             alias: "total_cases",
-            dataType: tableau.dataTypeEnum.float
+            dataType: tableau.dataTypeEnum.int
         }, {
             id: "total_cases_male",
             alias: "total_cases_male",
-            dataType: tableau.dataTypeEnum.float
+            dataType: tableau.dataTypeEnum.int
         }, {
             id: "total_cases_female",
             alias: "total_cases_female",
-            dataType: tableau.dataTypeEnum.float
+            dataType: tableau.dataTypeEnum.int
         }, {
             id: "total_cases_belgium",
             alias: "total_cases_belgium",
-            dataType: tableau.dataTypeEnum.float
+            dataType: tableau.dataTypeEnum.int
         }, {
             id: "total_cases_cambodia",
             alias: "total_cases_cambodia",
-            dataType: tableau.dataTypeEnum.float
+            dataType: tableau.dataTypeEnum.int
         }, {
             id: "total_cases_canada",
             alias: "total_cases_canada",
-            dataType: tableau.dataTypeEnum.float
+            dataType: tableau.dataTypeEnum.int
         }, {
             id: "total_cases_china",
             alias: "total_cases_china",
-            dataType: tableau.dataTypeEnum.float
+            dataType: tableau.dataTypeEnum.int
         }, {
             id: "total_cases_england",
             alias: "total_cases_england",
-            dataType: tableau.dataTypeEnum.float
+            dataType: tableau.dataTypeEnum.int
         }, {
             id: "total_cases_france",
             alias: "total_cases_france",
-            dataType: tableau.dataTypeEnum.float
+            dataType: tableau.dataTypeEnum.int
         }, {
             id: "total_cases_indonesia",
             alias: "total_cases_indonesia",
-            dataType: tableau.dataTypeEnum.float
+            dataType: tableau.dataTypeEnum.int
         }, {
             id: "total_cases_malaysia",
             alias: "total_cases_malaysia",
-            dataType: tableau.dataTypeEnum.float
+            dataType: tableau.dataTypeEnum.int
         }
         , {
             id: "total_cases_usa",
             alias: "total_cases_usa",
-            dataType: tableau.dataTypeEnum.float
+            dataType: tableau.dataTypeEnum.int
         },
 
             // active_cases
             {
                 id: "total_active_cases",
                 alias: "total_active_cases",
-                dataType: tableau.dataTypeEnum.float
+                dataType: tableau.dataTypeEnum.int
             }
             , {
                 id: "total_active_cases_female",
                 alias: "total_active_cases_female",
-                dataType: tableau.dataTypeEnum.float
+                dataType: tableau.dataTypeEnum.int
             }
             , {
                 id: "total_active_cases_male",
                 alias: "total_active_cases_male",
-                dataType: tableau.dataTypeEnum.float
+                dataType: tableau.dataTypeEnum.int
             },
 
             // recovered
             {
                 id: "total_recovered",
                 alias: "total_recovered",
-                dataType: tableau.dataTypeEnum.float
+                dataType: tableau.dataTypeEnum.int
             }
             ,{
                 id: "total_recovered_male",
                 alias: "total_recovered_male",
-                dataType: tableau.dataTypeEnum.float
+                dataType: tableau.dataTypeEnum.int
             }
             ,{
                 id: "total_recovered_female",
                 alias: "total_recovered_female",
-                dataType: tableau.dataTypeEnum.float
+                dataType: tableau.dataTypeEnum.int
             }
             ,{
                 id: "total_recovered_belgium",
                 alias: "total_recovered_belgium",
-                dataType: tableau.dataTypeEnum.float
+                dataType: tableau.dataTypeEnum.int
             }
             ,{
                 id: "total_recovered_cambodia",
                 alias: "total_recovered_cambodia",
-                dataType: tableau.dataTypeEnum.float
+                dataType: tableau.dataTypeEnum.int
             }
             ,{
                 id: "total_recovered_canada",
                 alias: "total_recovered_canada",
-                dataType: tableau.dataTypeEnum.float
+                dataType: tableau.dataTypeEnum.int
             }
             ,{
                 id: "total_recovered_china",
                 alias: "total_recovered_china",
-                dataType: tableau.dataTypeEnum.float
+                dataType: tableau.dataTypeEnum.int
             }
             ,{
                 id: "total_recovered_england",
                 alias: "total_recovered_england",
-                dataType: tableau.dataTypeEnum.float
+                dataType: tableau.dataTypeEnum.int
             }
             ,{
                 id: "total_recovered_france",
                 alias: "total_recovered_france",
-                dataType: tableau.dataTypeEnum.float
+                dataType: tableau.dataTypeEnum.int
             }
             ,{
                 id: "total_recovered_indonesia",
                 alias: "total_recovered_indonesia",
-                dataType: tableau.dataTypeEnum.float
+                dataType: tableau.dataTypeEnum.int
             }
             ,{
                 id: "total_recovered_malaysia",
                 alias: "total_recovered_malaysia",
-                dataType: tableau.dataTypeEnum.float
+                dataType: tableau.dataTypeEnum.int
             }
             ,{
                 id: "total_recovered_usa",
                 alias: "total_recovered_usa",
-                dataType: tableau.dataTypeEnum.float
+                dataType: tableau.dataTypeEnum.int
             }
 
             // Deaths
             ,{
                 id: "total_deaths",
                 alias: "total_deaths",
-                dataType: tableau.dataTypeEnum.float
+                dataType: tableau.dataTypeEnum.int
             }
             ,{
                 id: "total_deaths_female",
                 alias: "total_deaths_female",
-                dataType: tableau.dataTypeEnum.float
+                dataType: tableau.dataTypeEnum.int
             }
             ,{
                 id: "total_deaths_male",
                 alias: "total_deaths_male",
-                dataType: tableau.dataTypeEnum.float
+                dataType: tableau.dataTypeEnum.int
             }
         , {
             id: "updated_date",
             alias: "updated_date",
-            dataType: tableau.dataTypeEnum.date
+            dataType: tableau.dataTypeEnum.datetime
         }];
 
         var tableSchema = {
-            id: "Covid-19 Cmabodia Data",
-            alias: "Total",
+            id: "covidCambodiaData",
+            alias: "TOTAL COVID IN CAMBODIA",
             columns: cols
         };
 
@@ -180,7 +181,6 @@
             // Iterate over the JSON object
                 tableData.push({
                     "id": feat.id,
-
                     "total_cases": feat.total_cases,
                     "total_cases_male": feat.total_cases_male,
                     "total_cases_female": feat.total_cases_female,
@@ -228,7 +228,7 @@
     // Create event listeners for when the user submits the form
     $(document).ready(function() {
         $("#submitButton").click(function() {
-            tableau.connectionName = "Covid-19 Cambodia Data"; // This will be the data source name in Tableau
+            tableau.connectionName = "TOTAL COVID IN CAMBODIA"; // This will be the data source name in Tableau
             tableau.submit(); // This sends the connector object to Tableau
         });
     });

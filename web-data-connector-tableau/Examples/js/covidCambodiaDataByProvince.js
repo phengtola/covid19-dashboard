@@ -40,8 +40,8 @@
 
 
         var tableSchema = {
-            id: "Covid-19 Cmabodia Data",
-            alias: "Province",
+            id: "covidCambodiaDataByProvince",
+            alias: "TOTAL COVID IN CAMBODIA BY PROVINCE",
             columns: cols
         };
 
@@ -78,7 +78,7 @@
     // Create event listeners for when the user submits the form
     $(document).ready(function() {
         $("#submitButton").click(function() {
-            tableau.connectionName = "Covid-19 Cambodia Data | Province"; // This will be the data source name in Tableau
+            tableau.connectionName = "TOTAL COVID IN CAMBODIA BY PROVINCE"; // This will be the data source name in Tableau
             tableau.submit(); // This sends the connector object to Tableau
         });
     });
