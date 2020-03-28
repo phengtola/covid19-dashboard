@@ -7,6 +7,7 @@ import org.springframework.data.annotation.LastModifiedDate;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Table;
 import java.time.LocalDateTime;
 
 @Setter
@@ -15,11 +16,13 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @ToString
 @Entity
+@Table(name ="world_total_covid_country")
 @Audited
-public class WorldCovidData {
+public class WorldTotalCovidCountry {
 
     @Id
-    private String country;
+    private String countryId;
+    private String countryEn;
     private long totalCases;
     private long newCases;
     private long totalDeaths;

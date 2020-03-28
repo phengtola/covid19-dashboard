@@ -1,6 +1,6 @@
 package org.itadventure.covid.service;
 
-import org.itadventure.covid.entity.WorldCovidData;
+import org.itadventure.covid.entity.WorldTotalCovidCountry;
 import org.itadventure.covid.entity.WorldSumCovidData;
 
 import java.util.List;
@@ -8,5 +8,5 @@ import java.util.List;
 public interface WorldCovidDataService {
 
     WorldSumCovidData findTotal();
-    List<WorldCovidData> findAll();
+    List<WorldTotalCovidCountry> findAll();
 }

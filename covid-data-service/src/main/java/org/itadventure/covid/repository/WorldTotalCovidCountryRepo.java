@@ -1,10 +1,10 @@
 package org.itadventure.covid.repository;
 
-import org.itadventure.covid.entity.WorldCovidData;
+import org.itadventure.covid.entity.WorldTotalCovidCountry;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface WorldCovidDataRepo extends JpaRepository<WorldCovidData , Long> {
+public interface WorldTotalCovidCountryRepo extends JpaRepository<WorldTotalCovidCountry , Long> {
 
 }

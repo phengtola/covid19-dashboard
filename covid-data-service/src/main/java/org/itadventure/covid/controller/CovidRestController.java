@@ -1,13 +1,10 @@
 package org.itadventure.covid.controller;
 
 import org.itadventure.covid.controller.response.ApiResponse;
-import org.itadventure.covid.controller.response.ResourceNotFoundException;
 import org.itadventure.covid.entity.CambSumCovidData;
 import org.itadventure.covid.entity.CambTotalCovidDataProvince;
-import org.itadventure.covid.entity.WorldCovidData;
+import org.itadventure.covid.entity.WorldTotalCovidCountry;
 import org.itadventure.covid.entity.WorldSumCovidData;
-import org.itadventure.covid.repository.WorldCovidDataRepo;
-import org.itadventure.covid.repository.WorldSumCovidDataRepo;
 import org.itadventure.covid.service.CambodiaCovidDataService;
 import org.itadventure.covid.service.WorldCovidDataService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,7 +33,7 @@ public class CovidRestController {
     }
 
     @RequestMapping("/world/country")
-    public ApiResponse<List<WorldCovidData>> findWorldCovidData(){
+    public ApiResponse<List<WorldTotalCovidCountry>> findWorldCovidData(){
         return new ApiResponse<>(worldCovidDataService.findAll());
     }
 

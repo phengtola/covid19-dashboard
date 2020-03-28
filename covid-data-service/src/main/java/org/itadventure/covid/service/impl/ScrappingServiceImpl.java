@@ -1,9 +1,9 @@
 package org.itadventure.covid.service.impl;
 
-import org.itadventure.covid.entity.WorldCovidData;
 import org.itadventure.covid.entity.WorldSumCovidData;
-import org.itadventure.covid.repository.WorldCovidDataRepo;
+import org.itadventure.covid.entity.WorldTotalCovidCountry;
 import org.itadventure.covid.repository.WorldSumCovidDataRepo;
+import org.itadventure.covid.repository.WorldTotalCovidCountryRepo;
 import org.itadventure.covid.service.ScrappingService;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -22,7 +22,7 @@ public class ScrappingServiceImpl implements ScrappingService {
     private WorldSumCovidDataRepo worldSumCovidDataRepo;
 
     @Autowired
-    private WorldCovidDataRepo worldCovidDataRepo;
+    private WorldTotalCovidCountryRepo worldTotalCovidCountryRepo;
 
     @Override
     public void scrappingData() {
@@ -62,8 +62,13 @@ public class ScrappingServiceImpl implements ScrappingService {
             for (Element tr : trs) {
                 Elements tds = tr.getElementsByTag("td");
                 //Element td = tds.first();
-                WorldCovidData worldCovidData = new WorldCovidData();
-                worldCovidData.setCountry(tds.get(0).text());
+                WorldTotalCovidCountry worldCovidData = new WorldTotalCovidCountry();
+                worldCovidData.setCountryId(
+                        tds.get(0).text()
+                                .replaceAll("\\s+","_")
+                                .replace(".","").toLowerCase()
+                );
+                worldCovidData.setCountryEn(tds.get(0).text());
                 try {
                     worldCovidData.setTotalCases(Long.parseLong(tds.get(1).text().replace(",","")));
                 }catch (Exception e){}
@@ -94,7 +99,7 @@ public class ScrappingServiceImpl implements ScrappingService {
 
                 worldCovidData.setUpdatedAt(LocalDateTime.now());
                 System.out.println(worldCovidData.toString());
-                worldCovidDataRepo.save(worldCovidData);
+                worldTotalCovidCountryRepo.save(worldCovidData);
             }
             System.out.println("********* End ScrappingData *********** ");
         }

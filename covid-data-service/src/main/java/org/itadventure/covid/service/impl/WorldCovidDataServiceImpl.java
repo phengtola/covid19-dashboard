@@ -1,17 +1,14 @@
 package org.itadventure.covid.service.impl;
 
-import org.itadventure.covid.controller.response.ApiResponse;
-import org.itadventure.covid.controller.response.ResourceNotFoundException;
-import org.itadventure.covid.entity.WorldCovidData;
+import org.itadventure.covid.entity.WorldTotalCovidCountry;
 import org.itadventure.covid.entity.WorldSumCovidData;
-import org.itadventure.covid.repository.WorldCovidDataRepo;
 import org.itadventure.covid.repository.WorldSumCovidDataRepo;
+import org.itadventure.covid.repository.WorldTotalCovidCountryRepo;
 import org.itadventure.covid.service.WorldCovidDataService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class WorldCovidDataServiceImpl  implements WorldCovidDataService {
@@ -19,7 +16,7 @@ public class WorldCovidDataServiceImpl  implements WorldCovidDataService {
     @Autowired
     private WorldSumCovidDataRepo worldSumCovidDataRepo;
     @Autowired
-    private WorldCovidDataRepo worldCovidDataRepo;
+    private WorldTotalCovidCountryRepo worldTotalCovidCountryRepo;
 
     @Override
     public WorldSumCovidData findTotal(){
@@ -31,7 +28,7 @@ public class WorldCovidDataServiceImpl  implements WorldCovidDataService {
     }
 
     @Override
-    public List<WorldCovidData> findAll() {
-        return worldCovidDataRepo.findAll();
+    public List<WorldTotalCovidCountry> findAll() {
+        return worldTotalCovidCountryRepo.findAll();
     }
 }
