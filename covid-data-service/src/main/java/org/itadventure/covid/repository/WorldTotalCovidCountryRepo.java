@@ -7,4 +7,6 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface WorldTotalCovidCountryRepo extends JpaRepository<WorldTotalCovidCountry , Long> {
 
+    WorldTotalCovidCountry findByCountryEn(String countryEn);
+
 }

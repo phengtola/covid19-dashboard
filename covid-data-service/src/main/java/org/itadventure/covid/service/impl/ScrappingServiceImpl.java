@@ -101,7 +101,18 @@ public class ScrappingServiceImpl implements ScrappingService {
 
                 worldCovidData.setUpdatedAt(LocalDateTime.now());
                 System.out.println(worldCovidData.toString());
-                worldTotalCovidCountryRepo.save(worldCovidData);
+
+                WorldTotalCovidCountry worldTotalCovidCountryUpdate = worldTotalCovidCountryRepo.findByCountryEn(worldCovidData.getCountryEn());
+                if(worldTotalCovidCountryUpdate != null){
+                    System.out.println("********* UPDATE *********** ");
+                    worldCovidData.setId(worldTotalCovidCountryUpdate.getId());
+                    worldTotalCovidCountryRepo.save(worldCovidData);
+                }else {
+                    System.out.println("********* INSERT *********** ");
+                    worldTotalCovidCountryRepo.save(worldCovidData);
+                }
+
+
             }
             System.out.println("********* End ScrappingData *********** ");
         }

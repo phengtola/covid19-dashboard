@@ -4,10 +4,7 @@ import lombok.*;
 import org.hibernate.envers.Audited;
 import org.springframework.data.annotation.LastModifiedDate;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.time.LocalDateTime;
 
 @Setter
@@ -21,7 +18,12 @@ import java.time.LocalDateTime;
 public class WorldTotalCovidCountry {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(insertable=false, updatable=false, nullable = false)
+    private Long id;
+    @Column(name = "country_id", unique = true)
     private String countryId;
+    @Column(name = "country_en", unique = true)
     private String countryEn;
     private long totalCases;
     private long newCases;
