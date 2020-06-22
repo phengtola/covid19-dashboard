@@ -64,7 +64,6 @@ public class ScrappingReportServiceImpl implements ScrappingReportService {
     }
 
 
-
     private void scrapDetail(String url){
         try {
             Document doc;
