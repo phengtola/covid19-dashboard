@@ -63,6 +63,8 @@ public class ScrappingReportServiceImpl implements ScrappingReportService {
 
     }
 
+
+
     private void scrapDetail(String url){
         try {
             Document doc;
@@ -72,7 +74,6 @@ public class ScrappingReportServiceImpl implements ScrappingReportService {
             System.out.println( "  ---- " + a.text());
 
             Elements time = doc.getElementsByTag("time");
-            //System.out.println( "  ---- " + time.attr("datetime"));
             //System.out.println(this.changeDateFormat(time.attr("datetime"), "yyyy-MM-dd'T'HH:mm:ssXXX", "yyyy-MM-dd"));
             String dd = time.attr("datetime").split("T")[0];
             System.out.println( "  ---- " + dd);
