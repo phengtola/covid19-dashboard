@@ -1,7 +1,7 @@
 
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/COVID_DATA_V2
+    url: jdbc:postgresql://localhost:5432/COVID_DATA_V3
     hikari:
       driver-class-name: org.postgresql.Driver
       username: postgres

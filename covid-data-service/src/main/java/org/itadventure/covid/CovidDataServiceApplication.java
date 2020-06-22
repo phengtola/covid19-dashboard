@@ -1,5 +1,6 @@
 package org.itadventure.covid;
 
+import org.itadventure.covid.service.ScrappingReportService;
 import org.itadventure.covid.service.ScrappingService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -15,17 +16,21 @@ public class CovidDataServiceApplication implements CommandLineRunner {
     @Autowired
     private ScrappingService scrappingService;
 
+
+    @Autowired
+    private ScrappingReportService scrappingReportService;
+
     public static void main(String[] args) {
         SpringApplication.run(CovidDataServiceApplication.class, args);
     }
 
     @Override
     public void run(String... args) throws Exception {
-        //scrappingService.scrappingData();
+        scrappingReportService.scrappingData();
     }
 
-    @Scheduled(fixedRate = 60000) // 1 minutes
-    public void taskExecutorService(){
-        scrappingService.scrappingData();
-    }
+    //@Scheduled(fixedRate = 60000) // 1 minutes
+    /*public void taskExecutorService(){
+        scrappingService.scrappingCambodiaCovidData();
+    }*/
 }

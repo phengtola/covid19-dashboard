@@ -121,6 +121,43 @@ public class ScrappingServiceImpl implements ScrappingService {
         }
     }
 
+    @Override
+    public void scrappingCambodiaCovidData() {
+        Document doc;
+        System.out.println("********* ScrappingData *********** ");
+        try {
+            doc = Jsoup.connect("https://en.wikipedia.org/wiki/2020_coronavirus_pandemic_in_Cambodia").get();
+
+            Elements trs = doc.select("table.wikitable").get(1).select("tbody tr");
+
+            for (Element tr : trs) {
+                Elements tds = tr.getElementsByTag("td");
+                System.out.println(" case : " + tds.text());
+
+            }
+            /*for (Element element : tableElements) {
+                Elements data = element.select("td");
+                System.out.println(data.text());
+                *//*System.out.print(" case : " + data.get(0).text());
+                System.out.print(" date : " + data.get(1).text());
+                System.out.print(" age : " + data.get(2).text());
+                System.out.print(" gender : " + data.get(3).text());
+                System.out.println(" nationality : " + data.get(4).text());*//*
+            }*/
+
+            //remove header row
+            //trs.remove(0);
+
+            /*for (Element tr : trs) {
+                Elements tds = tr.getElementsByTag("td");
+                System.out.println(" case : " + tds.get(0).text());
+            }*/
+
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+    }
+
 }
 
 

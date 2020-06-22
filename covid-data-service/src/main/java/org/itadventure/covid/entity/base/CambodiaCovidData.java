@@ -18,23 +18,19 @@ import java.util.Date;
 public class CambodiaCovidData {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(insertable=false, updatable=false, nullable = false)
-    private Long id;
-
-    @DateTimeFormat(pattern = "yyyy-MM-dd")
-    @Temporal(TemporalType.DATE)
-    @Column(nullable = false)
-    private Date postedDate;
-    private long age;
+    private String id;
+    private String date;
+    private String age;
     private String gender;
     private String nationality;
+    private String detectedLocation;
     private String treatmentFacility;
     private String previousTravel;
     private String status;
+    private String note;
+    private String source;
     private String updatedStatusDate;
-    private String description;
-    private String detectedLocation;
+
     @ManyToOne
     @JoinColumn(name = "province_id")
     private CambodiaProvince province;
