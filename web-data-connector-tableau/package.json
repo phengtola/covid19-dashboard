@@ -57,7 +57,7 @@
     "selenium-webdriver": "^3.6.0",
     "should": "^9.0.2",
     "sinon": "^1.17.4",
-    "underscore": "^1.8.3",
+    "underscore": "^1.12.1",
     "validate.js": "^0.10.0",
     "vis": "^4.16.1",
     "webpack": "^4.42.1"
